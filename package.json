@@ -1,32 +1,27 @@
 {
-  "name": "react-mathjax",
-  "version": "0.1.1",
+  "name": "reactjax",
+  "version": "0.1.2",
   "description": "React component to render math",
   "main": "./lib/index.js",
   "scripts": {
     "lint": "eslint .",
-    "prepublish": "babel --out-dir ./lib ./src",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-example": "browserify ./example/main.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
-    "serve-example": "http-server ./example/ -p 8080",
-    "start": "npm run build-example; npm run serve-example",
-    "deploy-example": "npm run build-example; gh-pages -d ./example"
+    "prepare": "babel ./src --presets babel-preset-es2015 --out-dir ./lib"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SamyPesse/react-mathjax.git"
+    "url": "git+https://github.com/Snikanes/react-mathjax.git"
   },
   "keywords": [
     "react",
     "mathjax",
     "math"
   ],
-  "author": "Samy Pessé <samypesse@gmail.com>",
+  "author": "Eirik Vikanes <eirik.vikanes@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/SamyPesse/react-mathjax/issues"
+    "url": "https://github.com/Snikanes/react-mathjax/issues"
   },
-  "homepage": "https://github.com/SamyPesse/react-mathjax#readme",
+  "homepage": "https://github.com/Snikanes/react-mathjax#readme",
   "peerDependencies": {
     "react": "*"
   },
