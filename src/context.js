@@ -54,6 +54,12 @@ const MathJaxContext = createReactClass({
         const { options } = this.props;
         MathJax.Hub.Config(options);
 
+        MathJax.Hub.Register.StartupHook("End", () => {
+            if(this.props.didFinishTypeset) {
+                this.props.didFinishTypeset();
+            }
+        });
+
         this.setState({
             loaded: true
         });
@@ -68,6 +74,7 @@ const MathJaxContext = createReactClass({
 
 MathJaxContext.propTypes = {
     children: PropTypes.node.isRequired,
+    didFinishTypeset: PropTypes.func,
     script:   PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.oneOf([false])
